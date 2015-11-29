@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MocaWin", "NuGetPackage\MocaWin.csproj", "{0451BAEF-DF2E-4B98-8644-94EE9415E389}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0E65FE0F-D095-4025-BA20-33DD8B3EEFC4} = {0E65FE0F-D095-4025-BA20-33DD8B3EEFC4}
+		{579CFA12-0A79-45D7-BCFA-3BBBB0C12FE6} = {579CFA12-0A79-45D7-BCFA-3BBBB0C12FE6}
+		{7AF18446-DD1F-48B6-9201-F77DCC53B507} = {7AF18446-DD1F-48B6-9201-F77DCC53B507}
+		{900749A1-1CFB-4E46-837C-D302E92A9BE8} = {900749A1-1CFB-4E46-837C-D302E92A9BE8}
+		{BF4807FA-19DA-47D4-B441-B25A3890690C} = {BF4807FA-19DA-47D4-B441-B25A3890690C}
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MocaWin20", "MocaWin\MocaWin20.vbproj", "{900749A1-1CFB-4E46-837C-D302E92A9BE8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{816C1A4E-968C-4C6E-A846-79FA2E4E0851}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9DFCFC9D-C560-430D-B2EE-CA7EAF651CF9}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MocaWin35", "MocaWin35\MocaWin35.vbproj", "{0E65FE0F-D095-4025-BA20-33DD8B3EEFC4}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MocaWin40", "MocaWin40\MocaWin40.vbproj", "{7AF18446-DD1F-48B6-9201-F77DCC53B507}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MocaWin45", "MocaWin45\MocaWin45.vbproj", "{579CFA12-0A79-45D7-BCFA-3BBBB0C12FE6}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MocaWin46", "MocaWin46\MocaWin46.vbproj", "{BF4807FA-19DA-47D4-B441-B25A3890690C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Any CPU.Build.0 = Release|Any CPU
+		{900749A1-1CFB-4E46-837C-D302E92A9BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{900749A1-1CFB-4E46-837C-D302E92A9BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{900749A1-1CFB-4E46-837C-D302E92A9BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{900749A1-1CFB-4E46-837C-D302E92A9BE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E65FE0F-D095-4025-BA20-33DD8B3EEFC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E65FE0F-D095-4025-BA20-33DD8B3EEFC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E65FE0F-D095-4025-BA20-33DD8B3EEFC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E65FE0F-D095-4025-BA20-33DD8B3EEFC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AF18446-DD1F-48B6-9201-F77DCC53B507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AF18446-DD1F-48B6-9201-F77DCC53B507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AF18446-DD1F-48B6-9201-F77DCC53B507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AF18446-DD1F-48B6-9201-F77DCC53B507}.Release|Any CPU.Build.0 = Release|Any CPU
+		{579CFA12-0A79-45D7-BCFA-3BBBB0C12FE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{579CFA12-0A79-45D7-BCFA-3BBBB0C12FE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{579CFA12-0A79-45D7-BCFA-3BBBB0C12FE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{579CFA12-0A79-45D7-BCFA-3BBBB0C12FE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF4807FA-19DA-47D4-B441-B25A3890690C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF4807FA-19DA-47D4-B441-B25A3890690C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF4807FA-19DA-47D4-B441-B25A3890690C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF4807FA-19DA-47D4-B441-B25A3890690C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
