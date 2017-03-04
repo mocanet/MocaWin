@@ -1,103 +1,133 @@
 ﻿
 Namespace Win
 
-	''' <summary>
-	''' グリッドのボタン制御処理
-	''' </summary>
-	''' <remarks></remarks>
-	Public Class DataGridViewDisableButtonColumn
-		Inherits DataGridViewButtonColumn
+    ''' <summary>
+    ''' グリッドのボタン制御処理
+    ''' </summary>
+    ''' <remarks></remarks>
+    Public Class DataGridViewDisableButtonColumn
+        Inherits DataGridViewButtonColumn
 
-		Public Sub New()
-			Me.CellTemplate = New DataGridViewDisableButtonCell()
-		End Sub
-	End Class
+        Public Sub New()
+            Me.CellTemplate = New DataGridViewDisableButtonCell()
+        End Sub
+    End Class
 
-	Public Class DataGridViewDisableButtonCell
-		Inherits DataGridViewButtonCell
 
-		Private enabledValue As Boolean
-		Public Property Enabled() As Boolean
-			Get
-				Return enabledValue
-			End Get
-			Set(ByVal value As Boolean)
-				enabledValue = value
-			End Set
-		End Property
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    Public Class DataGridViewDisableButtonCell
+        Inherits DataGridViewButtonCell
 
-		' Override the Clone method so that the Enabled property is copied.
-		Public Overrides Function Clone() As Object
-			Dim Cell As DataGridViewDisableButtonCell = _
-				CType(MyBase.Clone(), DataGridViewDisableButtonCell)
-			Cell.Enabled = Me.Enabled
-			Return Cell
-		End Function
+        Private enabledValue As Boolean
+        Public Property Enabled() As Boolean
+            Get
+                Return enabledValue
+            End Get
+            Set(ByVal value As Boolean)
+                enabledValue = value
+            End Set
+        End Property
 
-		' By default, enable the button cell.
-		Public Sub New()
-			Me.enabledValue = True
-		End Sub
+        ' Override the Clone method so that the Enabled property is copied.
+        Public Overrides Function Clone() As Object
+            Dim Cell As DataGridViewDisableButtonCell =
+                CType(MyBase.Clone(), DataGridViewDisableButtonCell)
+            Cell.Enabled = Me.Enabled
+            Return Cell
+        End Function
 
-		Protected Overrides Sub Paint(ByVal graphics As Graphics, _
-			ByVal clipBounds As Rectangle, ByVal cellBounds As Rectangle, _
-			ByVal rowIndex As Integer, _
-			ByVal elementState As DataGridViewElementStates, _
-			ByVal value As Object, ByVal formattedValue As Object, _
-			ByVal errorText As String, _
-			ByVal cellStyle As DataGridViewCellStyle, _
-			ByVal advancedBorderStyle As DataGridViewAdvancedBorderStyle, _
-			ByVal paintParts As DataGridViewPaintParts)
+        ' By default, enable the button cell.
+        Public Sub New()
+            Me.enabledValue = True
+        End Sub
 
-			' The button cell is disabled, so paint the border,  
-			' background, and disabled button for the cell.
-			If Not Me.enabledValue Then
+        Private _padding As Padding
 
-				' Draw the background of the cell, if specified.
-				If (paintParts And DataGridViewPaintParts.Background) = _
-					DataGridViewPaintParts.Background Then
+        Protected Overrides Sub Paint(ByVal graphics As Graphics,
+            ByVal clipBounds As Rectangle, ByVal cellBounds As Rectangle,
+            ByVal rowIndex As Integer,
+            ByVal elementState As DataGridViewElementStates,
+            ByVal value As Object, ByVal formattedValue As Object,
+            ByVal errorText As String,
+            ByVal cellStyle As DataGridViewCellStyle,
+            ByVal advancedBorderStyle As DataGridViewAdvancedBorderStyle,
+            ByVal paintParts As DataGridViewPaintParts)
 
-					Dim cellBackground As New SolidBrush(cellStyle.BackColor)
-					graphics.FillRectangle(cellBackground, cellBounds)
-					cellBackground.Dispose()
-				End If
+            ' The button cell is disabled, so paint the border,  
+            ' background, and disabled button for the cell.
+            If Not Me.enabledValue Then
 
-				' Draw the cell borders, if specified.
-				If (paintParts And DataGridViewPaintParts.Border) = _
-					DataGridViewPaintParts.Border Then
+                ' Draw the background of the cell, if specified.
+                If (paintParts And DataGridViewPaintParts.Background) =
+                    DataGridViewPaintParts.Background Then
 
-					PaintBorder(graphics, clipBounds, cellBounds, cellStyle, _
-						advancedBorderStyle)
-				End If
+                    Dim cellBackground As New SolidBrush(cellStyle.BackColor)
+                    graphics.FillRectangle(cellBackground, cellBounds)
+                    cellBackground.Dispose()
+                End If
 
-				' Calculate the area in which to draw the button.
-				Dim buttonArea As Rectangle = cellBounds
-				Dim buttonAdjustment As Rectangle = _
-					Me.BorderWidths(advancedBorderStyle)
-				buttonArea.X += buttonAdjustment.X
-				buttonArea.Y += buttonAdjustment.Y
-				buttonArea.Height -= buttonAdjustment.Height
-				buttonArea.Width -= buttonAdjustment.Width
+                ' Draw the cell borders, if specified.
+                If (paintParts And DataGridViewPaintParts.Border) =
+                    DataGridViewPaintParts.Border Then
 
-				' Draw the disabled button.                
-				ButtonRenderer.DrawButton(graphics, buttonArea, _
-				   System.Windows.Forms.VisualStyles.PushButtonState.Disabled)
+                    PaintBorder(graphics, clipBounds, cellBounds, cellStyle,
+                        advancedBorderStyle)
+                End If
 
-				' Draw the disabled button text. 
-				If TypeOf Me.FormattedValue Is String Then
-					TextRenderer.DrawText(graphics, CStr(Me.FormattedValue), _
-						cellStyle.Font, buttonArea, SystemColors.GrayText)
-				End If
+                ' Calculate the area in which to draw the button.
+                Dim buttonArea As Rectangle = cellBounds
+                Dim buttonAdjustment As Rectangle =
+                    Me.BorderWidths(advancedBorderStyle)
+                buttonArea.X += (buttonAdjustment.X + cellStyle.Padding.Left)
+                buttonArea.Y += (buttonAdjustment.Y + cellStyle.Padding.Top)
+                buttonArea.Height -= (buttonAdjustment.Height + cellStyle.Padding.Top + cellStyle.Padding.Bottom)
+                buttonArea.Width -= (buttonAdjustment.Width + cellStyle.Padding.Left + cellStyle.Padding.Right)
 
-			Else
-				' The button cell is enabled, so let the base class 
-				' handle the painting.
-				MyBase.Paint(graphics, clipBounds, cellBounds, rowIndex, _
-					elementState, value, formattedValue, errorText, _
-					cellStyle, advancedBorderStyle, paintParts)
-			End If
-		End Sub
+                ' Draw the disabled button.                
+                'ButtonRenderer.DrawButton(graphics, buttonArea,
+                '   System.Windows.Forms.VisualStyles.PushButtonState.Disabled)
+                ButtonRenderer.DrawButton(graphics, buttonArea,
+                                        CStr(Me.FormattedValue),
+                                        cellStyle.Font,
+                                        False,
+                                        VisualStyles.PushButtonState.Disabled
+                                )
 
-	End Class
+                '' Draw the disabled button text. 
+                'If TypeOf Me.FormattedValue Is String Then
+                '    TextRenderer.DrawText(graphics, CStr(Me.FormattedValue),
+                '        cellStyle.Font, buttonArea, SystemColors.GrayText)
+                'End If
+
+            Else
+                ' The button cell is enabled, so let the base class 
+                ' handle the painting.
+                MyBase.Paint(graphics, clipBounds, cellBounds, rowIndex,
+                    elementState, value, formattedValue, errorText,
+                    cellStyle, advancedBorderStyle, paintParts)
+            End If
+        End Sub
+
+        Protected Overrides Sub OnMouseMove(e As DataGridViewCellMouseEventArgs)
+            If enabledValue Then
+                Me.DataGridView.Cursor = Cursors.Hand
+            Else
+                Me.DataGridView.Cursor = Cursors.Default
+            End If
+
+            MyBase.OnMouseMove(e)
+        End Sub
+
+        Protected Overrides Sub OnContentClick(e As DataGridViewCellEventArgs)
+            If Not enabledValue Then
+                Return
+            End If
+
+            MyBase.OnContentClick(e)
+        End Sub
+
+    End Class
 
 End Namespace
