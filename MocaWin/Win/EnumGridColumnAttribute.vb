@@ -19,11 +19,11 @@ Namespace Win
 		Private _ro As Boolean
 		''' <summary>非表示</summary>
 		Private _hidden As Boolean
-		''' <summary>チェック項目</summary>
-		Private _validateType As Moca.Util.ValidateTypes
+        ''' <summary>チェック項目</summary>
+        Private _validateType As Util.ValidateTypes
 
-		''' <summary>表示するエンティティのプロパティ名</summary>
-		Private _mapPropertyName As String
+        ''' <summary>表示するエンティティのプロパティ名</summary>
+        Private _mapPropertyName As String
 		''' <summary>表示幅</summary>
 		Private _width As Integer
 		''' <summary>表示位置</summary>

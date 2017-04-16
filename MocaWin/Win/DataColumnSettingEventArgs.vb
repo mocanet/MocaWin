@@ -53,9 +53,9 @@ Namespace Win
         End Property
 
         ''' <summary>ボタンのときは DataGridViewDisableButtonColumn。違うときは Nothing</summary>
-        Public ReadOnly Property DisableButton As DataGridViewDisableButtonColumn
+        Public ReadOnly Property DisableButton As GridDisableButtonColumn
             Get
-                Return TryCast(Me.Column, DataGridViewDisableButtonColumn)
+                Return TryCast(Me.Column, GridDisableButtonColumn)
             End Get
         End Property
 

@@ -400,7 +400,7 @@ Namespace Win
                 Case CellType.Button
                     col = New DataGridViewButtonColumn()
                 Case CellType.DisableButton
-                    col = New DataGridViewDisableButtonColumn()
+                    col = New GridDisableButtonColumn()
                 Case CellType.CheckBox
                     col = New DataGridViewCheckBoxColumn()
                 Case CellType.ComboBox

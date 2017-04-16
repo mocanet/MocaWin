@@ -5,11 +5,11 @@ Namespace Win
     ''' グリッドのボタン制御処理
     ''' </summary>
     ''' <remarks></remarks>
-    Public Class DataGridViewDisableButtonColumn
+    Public Class GridDisableButtonColumn
         Inherits DataGridViewButtonColumn
 
         Public Sub New()
-            Me.CellTemplate = New DataGridViewDisableButtonCell()
+            Me.CellTemplate = New GridDisableButtonCell()
         End Sub
     End Class
 
@@ -17,7 +17,7 @@ Namespace Win
     ''' <summary>
     ''' 
     ''' </summary>
-    Public Class DataGridViewDisableButtonCell
+    Public Class GridDisableButtonCell
         Inherits DataGridViewButtonCell
 
         Private enabledValue As Boolean
@@ -32,8 +32,8 @@ Namespace Win
 
         ' Override the Clone method so that the Enabled property is copied.
         Public Overrides Function Clone() As Object
-            Dim Cell As DataGridViewDisableButtonCell =
-                CType(MyBase.Clone(), DataGridViewDisableButtonCell)
+            Dim Cell As GridDisableButtonCell =
+                CType(MyBase.Clone(), GridDisableButtonCell)
             Cell.Enabled = Me.Enabled
             Return Cell
         End Function
@@ -112,12 +112,22 @@ Namespace Win
 
         Protected Overrides Sub OnMouseMove(e As DataGridViewCellMouseEventArgs)
             If enabledValue Then
-                Me.DataGridView.Cursor = Cursors.Hand
+                If e.RowIndex >= 0 Then
+                    Me.DataGridView.Cursor = Cursors.Hand
+                End If
             Else
                 Me.DataGridView.Cursor = Cursors.Default
             End If
 
             MyBase.OnMouseMove(e)
+        End Sub
+
+        Protected Overrides Sub OnClick(e As DataGridViewCellEventArgs)
+            If Not enabledValue Then
+                Return
+            End If
+
+            MyBase.OnClick(e)
         End Sub
 
         Protected Overrides Sub OnContentClick(e As DataGridViewCellEventArgs)

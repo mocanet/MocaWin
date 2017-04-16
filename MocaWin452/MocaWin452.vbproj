@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{579CFA12-0A79-45D7-BCFA-3BBBB0C12FE6}</ProjectGuid>
+    <ProjectGuid>{6DB8B3F8-3BD8-45B7-94DD-DB6E8076F1D0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Moca</RootNamespace>
     <AssemblyName>MocaWin</AssemblyName>
@@ -20,7 +20,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <PublishUrl>http://localhost/kmCommonLibWin/</PublishUrl>
     <Install>true</Install>
@@ -74,8 +74,8 @@
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="Moca, Version=4.5.0.0, Culture=neutral, PublicKeyToken=42f7e4f7232a6bf5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Moca.NETCore.2.3.3-beta01\lib\net45-full\Moca.dll</HintPath>
+    <Reference Include="Moca, Version=4.5.6.0, Culture=neutral, PublicKeyToken=42f7e4f7232a6bf5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moca.NETCore.2.3.3-beta01\lib\net452-full\Moca.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
