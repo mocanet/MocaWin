@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MocaWin\MocaWin20.vbproj" />
+    <ProjectReference Include="..\MocaWin\MocaWin35.vbproj" />
+    <ProjectReference Include="..\MocaWin\MocaWin40.vbproj" />
+    <ProjectReference Include="..\MocaWin\MocaWin45.vbproj" />
+    <ProjectReference Include="..\MocaWin\MocaWin452.vbproj" />
+    <ProjectReference Include="..\MocaWin\MocaWin46.vbproj" />
+    <ProjectReference Include="..\MocaWin\MocaWin462.vbproj" />
+    <ProjectReference Include="..\MocaWin\MocaWin47.vbproj" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>f1a3723a-fda1-4be6-beb5-c341ca76bec9</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NuProjPath Condition=" '$(NuProjPath)' == '' ">$(MSBuildExtensionsPath)\NuProj\</NuProjPath>
+  </PropertyGroup>
+  <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
+  <PropertyGroup Label="Configuration">
+    <Id>Moca.NETWin</Id>
+    <Version>2.1.2</Version>
+    <Title>Moca.NET Windows</Title>
+    <Authors>MiYABiS</Authors>
+    <Owners>MiYABiS</Owners>
+    <Summary>DI&amp;amp;AOP framework Moca.NET Windows UI</Summary>
+    <Description>DI&amp;amp;AOP framework Moca.NET Windows UI</Description>
+    <ReleaseNotes>
+    </ReleaseNotes>
+    <ProjectUrl>https://github.com/mocanet/MocaWin</ProjectUrl>
+    <LicenseUrl>https://opensource.org/licenses/MS-PL</LicenseUrl>
+    <Copyright>Copyright © 2011 MiYABiS All Rights Reserved.</Copyright>
+    <Tags>
+    </Tags>
+    <EmbedSourceFiles>true</EmbedSourceFiles>
+    <IconUrl>https://avatars1.githubusercontent.com/u/14543303</IconUrl>
+  </PropertyGroup>
+  <Import Project="$(NuProjPath)\NuProj.targets" />
+</Project>
