@@ -10,6 +10,17 @@
 
 DI&amp;AOP framework Moca.NET Windows UI
 
+## Support for multiple frameworks
+### Microsoft .NET Framework
+* 2.0
+* 3.5
+* 4.0
+* 4.5
+* 4.5.2
+* 4.6
+* 4.6.2
+* 4.7
+
 ## How to get
 
 URL:https://www.nuget.org/packages/Moca.NETWin/
